@@ -18,6 +18,8 @@ pip install jdatetime
 - Add your api hash
 - Add your bot token
 - Add your bot username without @
+- Open the Database/Data/Admins.json file
+- Set userId for admin
 - Run main.py
 
 ** 🔺 Note: Currently the bot is not complete... **
