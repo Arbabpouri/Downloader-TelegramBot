@@ -1,9 +1,3 @@
-{
-   "ApiID" : 123,
-   "ApiHash" : "",
-   "Token" : "",
-   "UsernameBot":"botfather"
-}
 
 class Config:
    SESSION_NAME = "bot"
