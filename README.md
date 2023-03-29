@@ -5,10 +5,7 @@
 **Do these things first : :point_down:**
 
 ```
-pip install telethon
-pip install aiocron
-pip install pytube
-pip install jdatetime
+pip install -r requirements.txt
 ```
 
 **Then : :point_down:**
