@@ -20,6 +20,6 @@ pip install jdatetime
 - Add your bot username without @
 - Run main.py
 
-** :point_down: Note: Currently the bot is not complete... **
+** 🔺 Note: Currently the bot is not complete... **
 
 My id in telegram [SardarCyberym](https://t.me/Oxygn16) :speech_balloon:
