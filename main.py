@@ -90,7 +90,7 @@ async def send_to_all(Admin_User_ID, MessageForSend, UserIDList):
         SendMessageList.append(MessageForSend)
         while True:
             await client.send_message(PeerUser(int(Admin_User_ID)), SendMessageList[0])
-            await client.send_message(PeerUser(int(Admin_User_ID)), f"⏳ تقریبی برای ارسال پیام بالا 👆🏻 حدود <code>{len(UserIDList) * 0.2 + 10}</code> ثانیه طول میکشد.\n\n🙏🏻 لطفا صبور باشید.\n\n♨️ اگر قصد ارسال چندین پیام دیگر نیز دارید , مجدد ارسال کنید تا در لیست انتظار ذخیره شوند و به نوبت ارسال میشوند.\n\n🆔 @AdorTM", parse_mode='html')
+            await client.send_message(PeerUser(int(Admin_User_ID)), f"⏳ تقریبی برای ارسال پیام بالا 👆🏻 حدود <code>{len(UserIDList) * 0.2 + 10}</code> ثانیه طول میکشد.\n\n🙏🏻 لطفا صبور باشید.\n\n♨️ اگر قصد ارسال چندین پیام دیگر نیز دارید , مجدد ارسال کنید تا در لیست انتظار ذخیره شوند و به نوبت ارسال میشوند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
             Number, Error = 0, 0
             await sleep(10)
             for i in UserIDList:
@@ -102,13 +102,13 @@ async def send_to_all(Admin_User_ID, MessageForSend, UserIDList):
                     Error += 1
             await client.send_message(PeerUser(int(Admin_User_ID)), SendMessageList[0])
             SendMessageList.remove(SendMessageList[0])
-            await client.send_message(PeerUser(int(Admin_User_ID)), f"⭕️ اعلام وضعیت ارسال همگانی 💢\n\n✅ وضعیت پیام های ارسال شده : پیام بالا 👆🏻 برای <code>{Number}</code> نفر از کاربران ارسال شد.\n\n❌ وضعیت پیام های ارسال نشده : پیام بالا 👆🏻 برای <code>{Error}</code> نفر از کاربران ارسال نشد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(SendMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @AdorTM", parse_mode='html')
+            await client.send_message(PeerUser(int(Admin_User_ID)), f"⭕️ اعلام وضعیت ارسال همگانی 💢\n\n✅ وضعیت پیام های ارسال شده : پیام بالا 👆🏻 برای <code>{Number}</code> نفر از کاربران ارسال شد.\n\n❌ وضعیت پیام های ارسال نشده : پیام بالا 👆🏻 برای <code>{Error}</code> نفر از کاربران ارسال نشد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(SendMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
             Number, Error = 0, 0
             if SendMessageList == []:
                 break
         
     else:
-        await client.send_message(PeerUser(int(Admin_User_ID)), f"✅ پیام ارسالی شما به لیست انتظار افزوده شد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(SendMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @AdorTM", parse_mode='html')
+        await client.send_message(PeerUser(int(Admin_User_ID)), f"✅ پیام ارسالی شما به لیست انتظار افزوده شد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(SendMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
         SendMessageList.append(MessageForSend)
 
 
@@ -118,7 +118,7 @@ async def forward_to_all(Admin_User_ID, MessageForSend, UserIDList):
         while True:
             Number, Error = 0, 0
             await client.send_message(PeerUser(int(Admin_User_ID)), ForwardMessageList[0])
-            await client.send_message(PeerUser(int(Admin_User_ID)), f"⏳ تقریبی برای ارسال پیام بالا 👆🏻 حدود <code>{len(UserIDList) * 5 + 10}</code> ثانیه طول میکشد.\n\n🙏🏻 لطفا صبور باشید.\n\n♨️ اگر قصد ارسال چندین پیام دیگر نیز دارید , مجدد ارسال کنید تا در لیست انتظار ذخیره شوند و به نوبت ارسال میشوند.\n\n🆔 @AdorTM", parse_mode='html')
+            await client.send_message(PeerUser(int(Admin_User_ID)), f"⏳ تقریبی برای ارسال پیام بالا 👆🏻 حدود <code>{len(UserIDList) * 5 + 10}</code> ثانیه طول میکشد.\n\n🙏🏻 لطفا صبور باشید.\n\n♨️ اگر قصد ارسال چندین پیام دیگر نیز دارید , مجدد ارسال کنید تا در لیست انتظار ذخیره شوند و به نوبت ارسال میشوند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
             await sleep(10)
             for i in UserIDList:
                 try:
@@ -129,13 +129,13 @@ async def forward_to_all(Admin_User_ID, MessageForSend, UserIDList):
                     Error += 1
             await client.send_message(PeerUser(int(Admin_User_ID)), ForwardMessageList[0])
             ForwardMessageList.remove(ForwardMessageList[0])
-            await client.send_message(PeerUser(int(Admin_User_ID)), f"⭕️ اعلام وضعیت فوروارد همگانی 💢\n\n✅ وضعیت پیام های ارسال شده : پیام بالا 👆🏻 برای <code>{Number}</code> نفر از کاربران ارسال شد.\n\n❌ وضعیت پیام های ارسال نشده : پیام بالا 👆🏻 برای <code>{Error}</code> نفر از کاربران ارسال نشد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(ForwardMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @AdorTM", parse_mode='html')
+            await client.send_message(PeerUser(int(Admin_User_ID)), f"⭕️ اعلام وضعیت فوروارد همگانی 💢\n\n✅ وضعیت پیام های ارسال شده : پیام بالا 👆🏻 برای <code>{Number}</code> نفر از کاربران ارسال شد.\n\n❌ وضعیت پیام های ارسال نشده : پیام بالا 👆🏻 برای <code>{Error}</code> نفر از کاربران ارسال نشد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(ForwardMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
             Number, Error = 0, 0
             if ForwardMessageList == []:
                 break
         
     else:
-        await client.send_message(PeerUser(int(Admin_User_ID)), f"✅ پیام ارسالی شما به لیست انتظار افزوده شد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(ForwardMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @AdorTM", parse_mode='html')
+        await client.send_message(PeerUser(int(Admin_User_ID)), f"✅ پیام ارسالی شما به لیست انتظار افزوده شد.\n\n🪑 وضعیت پیام های در انتظار : تعداد <code>{len(ForwardMessageList)}</code> پیام در لیست انتظار برای ارسال باقی مانده اند.\n\n🆔 @DownloadYarRobot", parse_mode='html')
         ForwardMessageList.append(MessageForSend)
 
 
@@ -180,7 +180,7 @@ async def members(event):
 🗣 - تعداد چنل های قفل شده : <code>{str(len(await Database.channel_list()))}</code>
 📅 تاریخ امروز : <b>{str(jdatetime.date.today()).replace('-', '/')}</b>
 🕰 ساعت : <b>{str(jdatetime.datetime.now().strftime("%H:%M:%S"))}</b>
-🆔 @AdorTM
+🆔 @DownloadYarRobot
 """, buttons= TextButtons.ADMIN_PANEL, parse_mode= 'html')
 
 # ----------------------------------------------------- Channel pack ----------------------------------------------------------
@@ -192,7 +192,7 @@ async def channel_menu(event):
 
 @client.on(NewMessage(pattern='🧮 افزودن چنل 🧮', func= admins_check))
 async def add_channel(event):
-    await client.send_message(event.sender_id, f"🌹 خب ببین {event.chat.first_name} کامل گوش بده ببین چی میگم.😎\n✅ برای افزودن قفل چنل باید این کاراییو که میگم  به درستی انجام بدی وگرنه نمیتونم کمکت کنم و شرمندت میشم.😢\n1️⃣ اولین کار اینه که منو (رباتو) توی چنلی که میخوای قفل شه ادمین کنی.\n2️⃣ دومین مرحله اینه که یه پیام (ترجیحا به صورت متن باشه) از همون چنل که منو ادمین کردی توش برام بفرستی تا بتونم مشخصاتشو در بیارم و قفل شم روش.\n3️⃣ قفل میشم روش و میتونی لذت ببری.\n🔴 #تذکر = یادت نره ربات رو از ادمینی در نیاری وگرنه از لیست چنلای قفل شده پاکش میکنم.🔴\n🆔 @AdorTM", buttons= TextButtons.CHANEL_PROCEC)
+    await client.send_message(event.sender_id, f"🌹 خب ببین {event.chat.first_name} کامل گوش بده ببین چی میگم.😎\n✅ برای افزودن قفل چنل باید این کاراییو که میگم  به درستی انجام بدی وگرنه نمیتونم کمکت کنم و شرمندت میشم.😢\n1️⃣ اولین کار اینه که منو (رباتو) توی چنلی که میخوای قفل شه ادمین کنی.\n2️⃣ دومین مرحله اینه که یه پیام (ترجیحا به صورت متن باشه) از همون چنل که منو ادمین کردی توش برام بفرستی تا بتونم مشخصاتشو در بیارم و قفل شم روش.\n3️⃣ قفل میشم روش و میتونی لذت ببری.\n🔴 #تذکر = یادت نره ربات رو از ادمینی در نیاری وگرنه از لیست چنلای قفل شده پاکش میکنم.🔴\n🆔 @DownloadYarRobot", buttons= TextButtons.CHANEL_PROCEC)
     AdminResponsive.append(event.sender_id)
     # give chat id for add to database
 
