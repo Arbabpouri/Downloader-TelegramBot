@@ -4,7 +4,7 @@ class YoutubeDownloader:
     def __init__(self,Link):
       self.url = Link
 
-    def youtube_download(self):
+    async def youtube_download(self):
         try:
             return YouTube(self.url).streaming_data
         except Exception as ex:
