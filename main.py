@@ -167,7 +167,7 @@ async def second_to_date(Time:float):
 
 @client.on(NewMessage(pattern='پنل', func= admins_check))
 async def ADMIN_SETTING(event):
-    await client.send_message(event.sender_id, 'سلام ادمین عزیز به پنل مدیریت ربات خود خوش امدید 😀', buttons= TextButtons.ADMIN_SETTING)
+    await client.send_message(event.sender_id, 'سلام ادمین عزیز به پنل مدیریت ربات خود خوش امدید 😀', buttons= TextButtons.ADMIN_PANEL)
 
 
 @client.on(NewMessage(pattern='👥 آمار ربات 👥', func= admins_check))
@@ -181,7 +181,7 @@ async def members(event):
 📅 تاریخ امروز : <b>{str(jdatetime.date.today()).replace('-', '/')}</b>
 🕰 ساعت : <b>{str(jdatetime.datetime.now().strftime("%H:%M:%S"))}</b>
 🆔 @AdorTM
-""", buttons= TextButtons.ADMIN_SETTING, parse_mode= 'html')
+""", buttons= TextButtons.ADMIN_PANEL, parse_mode= 'html')
 
 # ----------------------------------------------------- Channel pack ----------------------------------------------------------
 
@@ -203,7 +203,7 @@ async def add_channel(event):
         elif event2.message.message == "❌ کنسل کردن ❌":
             client.remove_event_handler(GiveChannelForAdd)
             AdminResponsive.remove(event2.sender_id)
-            await client.send_message(event2.sender_id, "عملیات کنسل شد\n\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_SETTING)
+            await client.send_message(event2.sender_id, "عملیات کنسل شد\n\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_PANEL)
         elif event2.fwd_from:
             try:
                 Channels = await Database.channel_list()
@@ -213,7 +213,7 @@ async def add_channel(event):
                         client.remove_event_handler(GiveChannelForAdd)
                         await Database.add_channel(int(event2.fwd_from.from_id.channel_id))
                         AdminResponsive.remove(event2.sender_id)
-                        await client.send_message(event2.sender_id, f"کانال با ایدی عددی {event2.fwd_from.from_id.channel_id} و لینک {Link.full_chat.exported_invite.link} به لیست چنل های قفل شده اضافه شد :)\n\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_SETTING)
+                        await client.send_message(event2.sender_id, f"کانال با ایدی عددی {event2.fwd_from.from_id.channel_id} و لینک {Link.full_chat.exported_invite.link} به لیست چنل های قفل شده اضافه شد :)\n\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_PANEL)
                     else:
                         await client.send_message(event2.sender_id, "رفیق مثل اینکه منو ادمین کانال نکردی\nلطفا اول منو ادمین کن بعد پیامو فوروارد کن", buttons= TextButtons.CHANEL_PROCEC)
                 else:
@@ -269,7 +269,7 @@ async def remove_channel(event):
                         client.remove_event_handler(GiveChannelChatIDForDelete)
                         await Database.del_channel(int(event2.message.message))
                         AdminResponsive.remove(event2.sender_id)
-                        await client.send_message(event2.sender_id, f"کانال با ایدی عددی {event2.message.message} از لیست کانال های قفل شده حذف شد\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_SETTING)
+                        await client.send_message(event2.sender_id, f"کانال با ایدی عددی {event2.message.message} از لیست کانال های قفل شده حذف شد\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_PANEL)
                     else:
                         await client.send_message(event2.sender_id, "دوست عزیز این ایدی عددی اصلا در لیست وجود ندارد لطفا دقت کنید", buttons= TextButtons.CHANEL_PROCEC)
                 else:
@@ -326,7 +326,7 @@ async def add_admin(event):
         elif event2.message.message == "❌ کنسل کردن ❌":
             client.remove_event_handler(GetUserIDForAddAdmin)
             AdminResponsive.remove(event2.sender_id)
-            await client.send_message(event2.sender_id, "عملیات لغو شد\n\nبه پنل بازگشتید", buttons= TextButtons.ADMIN_SETTING)
+            await client.send_message(event2.sender_id, "عملیات لغو شد\n\nبه پنل بازگشتید", buttons= TextButtons.ADMIN_PANEL)
         elif event2.fwd_from:
             try:
                 Admins = await Database.admin_list()
@@ -343,13 +343,12 @@ async def add_admin(event):
 
         elif event2.message.message.isnumeric():
             try:
-                await client.get_entity(PeerUser(int(event2.message.message)))
                 Admins = await Database.admin_list()
                 if int(event2.message.message) not in Admins:
                     client.remove_event_handler(GetUserIDForAddAdmin)
                     await Database.add_admin(int(event2.message.message))
                     AdminResponsive.remove(event2.sender_id)
-                    await client.send_message(event2.sender_id, f'ادمین با ایدی عددی {str(event2.message.message)} به لیست ادمین ها افزوده شد', buttons= TextButtons.ADMIN_SETTING)
+                    await client.send_message(event2.sender_id, f'ادمین با ایدی عددی {str(event2.message.message)} به لیست ادمین ها افزوده شد', buttons= TextButtons.ADMIN_PANEL)
                 else:
                     await client.send_message(event2.sender_id, "ایشان در لیست ادمین ها حضور دارد قربان", buttons= TextButtons.CHANEL_PROCEC)
             except ValueError:
@@ -390,7 +389,7 @@ async def remove_admin(event):
                     client.remove_event_handler(GetAdminUserIDForDelete)
                     await Database.del_admin(int(event2.message.message))
                     AdminResponsive.remove(event2.sender_id)
-                    await client.send_message(event2.sender_id, f"ادمین با ایدی عددی {event2.message.message} از لیست ادمین ها حذف شد\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_SETTING)
+                    await client.send_message(event2.sender_id, f"ادمین با ایدی عددی {event2.message.message} از لیست ادمین ها حذف شد\n\nبه پنل مدیریت بازگشتید", buttons= TextButtons.ADMIN_PANEL)
                 else:
                     await client.send_message(event2.sender_id, f"ادمینی با این ایدی عددی اصلا در لیست ادمین ها حضور ندارد قربان", buttons= TextButtons.CHANEL_PROCEC)
 
@@ -438,7 +437,7 @@ async def send_message_to_all(event):
         elif event2.message.message == "❌ کنسل کردن ❌":
             client.remove_event_handler(get_message_for_send_all)
             AdminResponsive.remove(event2.sender_id)
-            await client.send_message(event.sender_id, "❌ عملیات ارسال همگانی کنسل شد", buttons= TextButtons.ADMIN_SETTING)
+            await client.send_message(event.sender_id, "❌ عملیات ارسال همگانی کنسل شد", buttons= TextButtons.ADMIN_PANEL)
         else:
             client.remove_event_handler(get_message_for_send_all)
             AdminResponsive.remove(event2.sender_id)
@@ -457,7 +456,7 @@ async def forward_message_to_all(event):
         elif event2.message.message == "❌ کنسل کردن ❌":
             client.remove_event_handler(get_message_for_forward_all)
             AdminResponsive.remove(event2.sender_id)
-            await client.send_message(event.sender_id, "❌ عملیات فوروراد همگانی کنسل شد", buttons= TextButtons.ADMIN_SETTING)
+            await client.send_message(event.sender_id, "❌ عملیات فوروراد همگانی کنسل شد", buttons= TextButtons.ADMIN_PANEL)
         else:
             client.remove_event_handler(get_message_for_forward_all)
             AdminResponsive.remove(event2.sender_id)
