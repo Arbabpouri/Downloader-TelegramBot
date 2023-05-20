@@ -1,8 +1,6 @@
 #                                                in the name of god
-#Telegram : https://telegram.me/Sardar_Cybery
 #github : https://github.com/Arbabpouri
-#                                                    (( Ador Tm ))
-
+# It may have bugs because it has not been fully tested
 from asyncio import sleep
 from json import loads
 from Database.Database import Database
