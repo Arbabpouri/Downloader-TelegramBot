@@ -21,4 +21,4 @@ pip install -r requirements.txt
 
 ** 🔺 Note: Currently the bot is not complete... **
 
-My id in telegram [SardarCyberym](https://t.me/Oxygn16) :speech_balloon:
+# Version 2 : [Plus Saver](https://github.com/arbabpouri/PlusSaver)
